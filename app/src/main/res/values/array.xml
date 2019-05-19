@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ld_activityScreenTitles">
+        <item>Главная</item>
+        <item>Измерения</item>
+        <item>Графики</item>
+        <item>Продукты</item>
+        <item>Аккаунт</item>
+        <item />
+        <item>Выйти</item>
+    </string-array>
+
+    <array name="ld_activityScreenIcons">
+        <item>@drawable/ic_home_menu_24dp</item>
+        <item>@drawable/ic_notes_menu_24dp</item>
+        <item>@drawable/ic_charts_menu_24dp</item>
+        <item>@drawable/ic_products_menu_24dp</item>
+        <item>@drawable/ic_account_menu_24dp</item>
+        <item>0</item>
+        <item>@drawable/ic_logout_menu_24dp</item>
+    </array>
+</resources>

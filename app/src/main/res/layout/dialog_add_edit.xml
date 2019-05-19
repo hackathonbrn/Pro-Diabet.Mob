@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/whiteColor">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/add_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/primaryColor" />
+
+    <ImageView
+        android:id="@+id/note_add_back_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_margin="12dp"
+        android:src="@drawable/ic_arrow_back_24dp"
+        android:tint="@color/whiteColor" />
+
+    <TextView
+        android:id="@+id/note_title_add_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_toStartOf="@id/note_button_add"
+        android:layout_toEndOf="@id/note_add_back_arrow"
+        android:gravity="center"
+        android:text="Add(Edit) note"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/whiteColor" />
+
+    <ImageView
+        android:id="@+id/note_button_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="12dp"
+        android:src="@drawable/ic_done_black_24dp"
+        android:tint="@color/whiteColor" />
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/add_toolbar"
+        android:layout_marginBottom="5dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_today_36dp"
+        android:layout_margin="12dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_time_"
+        android:layout_below="@id/note_add_date"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="12dp"/>
+
+            <TextView
+                android:id="@+id/note_add_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:text="24 апр. '19"
+                android:textColor="@color/primaryColor"
+                android:textSize="28sp" />
+
+    <TextView
+        android:id="@+id/note_add_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_add_date"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:text="19:42"
+        android:textColor="@color/primaryColor"
+        android:textSize="28sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/note_add_card_sugar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_add_time"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/add_sugar_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/ic_blood_sugar" />
+
+            <TextView
+                android:id="@+id/add_sugar_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="0.0"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/add_sugar_measurement"
+                android:layout_width="60dp"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:text="@string/mmol_l"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/add_sugar_picker_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_sugar_value"
+                android:layout_marginTop="8dp"
+                android:visibility="gone">
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/add_sugar_picker_float"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_below="@id/add_sugar_picker"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/greyLightColor"
+                    app:np_dividerColor="@color/primaryColor"
+                    app:np_dividerThickness="0dp"
+                    app:np_max="9"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/primaryColor"
+                    app:np_selectedTextSize="24sp"
+                    app:np_textColor="@color/greyColor"
+                    app:np_textSize="16sp"
+                    app:np_typeface="@string/fontThin"
+                    app:np_value="0"
+                    app:np_wheelItemCount="5"
+                    app:np_wrapSelectorWheel="false" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_sugar_picker"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_triangle" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/add_sugar_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/greyLightColor"
+                    app:np_dividerColor="@color/primaryColor"
+                    app:np_dividerThickness="0dp"
+                    app:np_max="50"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/primaryColor"
+                    app:np_selectedTextSize="24sp"
+                    app:np_textColor="@color/greyColor"
+                    app:np_textSize="16sp"
+                    app:np_typeface="@string/fontThin"
+                    app:np_value="5"
+                    app:np_wheelItemCount="5"
+                    app:np_wrapSelectorWheel="false" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_sugar_picker"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-10dp"
+                    android:rotation="180"
+                    android:src="@drawable/ic_triangle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_sugar_picker"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-25dp"
+                    android:text="@string/dot"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="28sp" />
+
+                <CheckBox
+                    android:id="@+id/add_sugar_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_sugar_picker_float"
+                    android:layout_centerHorizontal="true"
+                    android:text="Not measured"
+                    android:textColor="@color/greyColor"
+                    android:checked="true"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/note_add_card_bread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_add_card_sugar"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/add_bread_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/ic_products_menu_24dp"
+                android:tint="@color/greyColor" />
+
+            <TextView
+                android:id="@+id/add_bread_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="0.0"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/add_bread_measurement"
+                android:layout_width="60dp"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:text="@string/bread_units"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/add_bread_picker_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_bread_value"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/add_bread_picker_float"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_below="@id/add_bread_picker"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/greyLightColor"
+                    app:np_dividerColor="@color/primaryColor"
+                    app:np_dividerThickness="0dp"
+                    app:np_max="9"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/primaryColor"
+                    app:np_selectedTextSize="24sp"
+                    app:np_textColor="@color/greyColor"
+                    app:np_textSize="16sp"
+                    app:np_typeface="@string/fontThin"
+                    app:np_value="0"
+                    app:np_wheelItemCount="5"
+                    app:np_wrapSelectorWheel="false" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_bread_picker"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_triangle" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/add_bread_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/greyLightColor"
+                    app:np_dividerColor="@color/primaryColor"
+                    app:np_dividerThickness="0dp"
+                    app:np_max="50"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/primaryColor"
+                    app:np_selectedTextSize="24sp"
+                    app:np_textColor="@color/greyColor"
+                    app:np_textSize="16sp"
+                    app:np_typeface="@string/fontThin"
+                    app:np_value="0"
+                    app:np_wheelItemCount="5"
+                    app:np_wrapSelectorWheel="false" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_bread_picker"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-10dp"
+                    android:rotation="180"
+                    android:src="@drawable/ic_triangle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_bread_picker"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-25dp"
+                    android:text="@string/dot"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="28sp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/note_add_card_insulin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_add_card_bread"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/add_insulin_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/ic_insulin_24dp"
+                android:tint="@color/greyColor" />
+
+            <TextView
+                android:id="@+id/add_insulin_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="0.0"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/add_insulin_measurement"
+                android:layout_width="60dp"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:gravity="center"
+                android:text="@string/insulin"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:id="@+id/add_insulin_picker_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_insulin_value"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/add_insulin_picker_float"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_below="@id/add_insulin_picker"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/greyLightColor"
+                    app:np_dividerColor="@color/primaryColor"
+                    app:np_dividerThickness="0dp"
+                    app:np_max="9"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/primaryColor"
+                    app:np_selectedTextSize="24sp"
+                    app:np_textColor="@color/greyColor"
+                    app:np_textSize="16sp"
+                    app:np_typeface="@string/fontThin"
+                    app:np_value="0"
+                    app:np_wheelItemCount="5"
+                    app:np_wrapSelectorWheel="false" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_insulin_picker"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_triangle" />
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/add_insulin_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_below="@id/add_insulin_text_ll"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/greyLightColor"
+                    app:np_dividerColor="@color/primaryColor"
+                    app:np_dividerThickness="0dp"
+                    app:np_max="50"
+                    app:np_min="0"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/primaryColor"
+                    app:np_selectedTextSize="24sp"
+                    app:np_textColor="@color/greyColor"
+                    app:np_textSize="16sp"
+                    app:np_typeface="@string/fontThin"
+                    app:np_value="0"
+                    app:np_wheelItemCount="5"
+                    app:np_wrapSelectorWheel="false" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_insulin_picker"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-10dp"
+                    android:rotation="180"
+                    android:src="@drawable/ic_triangle" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_insulin_picker"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-25dp"
+                    android:text="@string/dot"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="28sp" />
+                <LinearLayout
+                    android:id="@+id/add_insulin_text_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal"
+                    android:layout_centerHorizontal="true">
+                    <TextView
+                        android:id="@+id/add_insulin_text_short"
+                        android:layout_width="125dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Короткий"
+                        android:textColor="@color/primaryColor"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/add_insulin_text_long"
+                        android:layout_width="125dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Длинный"
+                        android:textColor="@color/greyColor"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/note_add_card_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/note_add_card_insulin"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/add_comment_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_comment_24dp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_comment_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/add_comment_icon"
+                android:hint="@string/Enter_comment" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/note_add_card_comment"
+        android:background="@color/whiteColor" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Pro-Diabet</string>
+
+    <string name="fontThin">sans-serif-thin</string>
+    <string name="fontNumbers">sans-serif-thin</string>
+    <string name="fontText">sans-serif-thin</string>
+    <string name="dot">.</string>
+    <string name="mmol_l">Ммоль/л</string>
+    <string name="Enter_comment">Введите комментарий к измерению</string>
+    <string name="insulin">Инсулин</string>
+    <string name="bread_units">ХЕ</string>
+    <string name="add_note">Добавление</string>
+    <string name="edit_note">Редактирование</string>
+    <string name="sugar">Сахар</string>
+</resources>
